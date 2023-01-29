@@ -1,0 +1,14 @@
+{
+  "name": "typescript_rest_api",
+  "version": "1.0.0",
+  "description": "Rest API with TypeORM & Express",
+  "scripts": {
+    "build": "tsc",
+    "start-server": "node dist/server.js"
+  },
+  "author": "Arif Iqbal",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
