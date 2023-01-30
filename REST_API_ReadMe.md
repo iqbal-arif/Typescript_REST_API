@@ -32,8 +32,9 @@
 11. Typescript Continuous UPdate: tsc -w
 12. Install Express normal dependency: npm install --save express
 13. Install Express for Typescript dependency: npm install --save-dev @types/express
-14. Install rimraf to clean /dist folder at the beginning of build process: npm install --save-def rimraf
-15. Install cross-platform module: npm install --save-dev npm-run-all
+14. Install rimraf to clean /dist folder at the beginning of build process: npm install --save-def rimraf. In linux it is rm -rf
+15. Install cross-platform module that runs in scripts in sequence and in parallel:
+    npm install --save-dev npm-run-all
 
 **\*** SERVER Setup **\***
 
