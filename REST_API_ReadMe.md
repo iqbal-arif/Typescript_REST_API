@@ -27,7 +27,7 @@
    "start-server": "node dist/server.js"
    },
 8. File compilation: tsc
-9. App Launch: npm run build
+9. App Launch for script: npm run build
 10. To run the .ts file and get result: npm run start-server
 11. Typescript Continuous UPdate: tsc -w
 12. Install Express normal dependency: npm install --save express
