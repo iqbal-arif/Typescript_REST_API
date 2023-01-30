@@ -2,6 +2,7 @@
 /**Express Module from /node_modules */
 import * as express from 'express';
 import { root } from './routes/route';
+import { isInteger } from './utils';
 
 /***Initialize Express */
 const app = express();
@@ -22,6 +23,9 @@ function setupExpress() {
  */
 function startServer() {
   //   console.log(process.argv); /*See Note 18 in REST_API_ReadMe.md*/
+  // process.argv picks argument from package.json script declaration.
+
+  let port: number;
 
   const portArg = process.argv[2]; //index [2] because it contains PORT NUMBER.
 
@@ -32,8 +36,18 @@ function startServer() {
     1. parsInt("asdfjkl"): result is NaN 
     1. parsInt("9001asdafjkl"): result is 9001 (It takes the number part only*/
 
-  app.listen(9000, () => {
-    console.log('HTTP REST API Server is now running at http://localhost:9000');
+  if (isInteger(portArg)) {
+    port = parseInt(portArg);
+  }
+
+  //   if port is not defined or has
+  if (!port) {
+    port = 9000;
+  }
+  app.listen(port, () => {
+    console.log(
+      `HTTP REST API Server is now running at http://localhost:${port}`
+    );
   });
 }
 
