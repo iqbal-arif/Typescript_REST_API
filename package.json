@@ -6,8 +6,8 @@
     "clean": "rimraf dist",
     "build": "tsc",
     "start-server": "node dist/server.js",
-    "start-dev-server": "",
-    "dev": "npm-run-all clean build start-server"
+    "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js 9901\"",
+    "dev": "npm-run-all clean build start-dev-server"
   },
   "author": "Arif Iqbal",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "@types/express": "^4.17.16",
     "npm-run-all": "^4.1.5",
     "rimraf": "^4.1.2",
+    "tsc-watch": "^6.0.0",
     "typescript": "^4.9.4"
   },
   "dependencies": {

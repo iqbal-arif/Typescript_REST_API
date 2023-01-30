@@ -20,6 +20,14 @@ function setupExpress() {
  Logic to Start Server
  */
 function startServer() {
+    //   console.log(process.argv); /*See Note 18 in REST_API_ReadMe.md*/
+    var portArg = process.argv[2]; //index [2] because it contains PORT NUMBER.
+    // Converting String to Number
+    /*****Important NOTE ON parseInt*****/
+    /*
+      1. parsInt("9001"): result is 9001
+      1. parsInt("asdfjkl"): result is NaN
+      1. parsInt("9001asdafjkl"): result is 9001 (It takes the number part only*/
     app.listen(9000, function () {
         console.log('HTTP REST API Server is now running at http://localhost:9000');
     });

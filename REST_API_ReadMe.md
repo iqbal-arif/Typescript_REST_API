@@ -35,6 +35,32 @@
 14. Install rimraf to clean /dist folder at the beginning of build process: npm install --save-def rimraf. In linux it is rm -rf
 15. Install cross-platform module that runs in scripts in sequence and in parallel:
     npm install --save-dev npm-run-all
+16. Modify script for dev and production application
+    "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "start-server": "node dist/server.js",
+    "start-dev-server": "",
+    "dev": "npm-run-all clean build start-server"
+    },
+17. Typescript tsc watch, watches for the changes & build it : npm install --save-dev tsc-watch
+18. Parsing Command Line Argument
+    "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js 9901\"",
+
+    ***
+
+    // print process.argv
+    argv.forEach((val, index) => {
+    console.log(`${index}: ${val}`);
+    });
+    Launching the Node.js process as:
+
+    $ node dist/server.js 9901
+    Would generate the output:
+
+    0: C:\\Program Files\\nodejs\\node.exe
+    1: C:\\GITHUB\\Typescript_REST_API\\dist\\server.js
+    2: 9901
 
 **\*** SERVER Setup **\***
 
