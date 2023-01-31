@@ -64,6 +64,7 @@
 
 19. DotEnv Package: To support Multiple Environments for App.
     1. Install Package: npm install dotenv --save
+    2. Add LOGGER_LEVEL=debug: In production it is "debug"; normally it is set to "error" or "info"
 20. Winston Logging Framework: 1. Install Package: npm install --save winston
     **\*** SERVER Setup **\***
 

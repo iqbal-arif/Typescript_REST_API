@@ -13,6 +13,7 @@ console.log(process.env.PORT);
 /************IMPORTS */
 /**Express Module from /node_modules */
 var express = require("express");
+var logger_1 = require("./logger"); // should load after environment load to work properly
 var route_1 = require("./routes/route");
 var utils_1 = require("./utils");
 /***Initialize Express */
@@ -56,7 +57,7 @@ function startServer() {
         port = 9000;
     }
     app.listen(port, function () {
-        console.log("HTTP REST API Server is now running at http://localhost:".concat(port));
+        logger_1.logger.info("HTTP REST API Server is now running at http://localhost:".concat(port));
     });
 }
 /********* INVOKING THE FUNCTIONS *******/

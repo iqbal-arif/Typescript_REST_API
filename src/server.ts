@@ -14,6 +14,7 @@ console.log(process.env.PORT);
 /************IMPORTS */
 /**Express Module from /node_modules */
 import * as express from 'express';
+import { logger } from './logger'; // should load after environment load to work properly
 import { root } from './routes/route';
 import { isInteger } from './utils';
 
@@ -67,7 +68,7 @@ function startServer() {
     port = 9000;
   }
   app.listen(port, () => {
-    console.log(
+    logger.info(
       `HTTP REST API Server is now running at http://localhost:${port}`
     );
   });
