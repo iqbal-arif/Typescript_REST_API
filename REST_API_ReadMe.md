@@ -62,6 +62,9 @@
     1: C:\\GITHUB\\Typescript_REST_API\\dist\\server.js
     2: 9901
 
+19. DotEnv Package: To support Multiple Environments for App.
+    1. Install Package: npm install dotenv --save
+
 **\*** SERVER Setup **\***
 
 1. Server Logic: server.js
