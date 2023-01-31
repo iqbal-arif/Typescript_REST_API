@@ -6,7 +6,7 @@
     "clean": "rimraf dist",
     "build": "tsc",
     "start-server": "node dist/server.js",
-    "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js 9901\"",
+    "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js 9002\"",
     "dev": "npm-run-all clean build start-dev-server"
   },
   "author": "Arif Iqbal",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "winston": "^3.8.2"
   }
 }
