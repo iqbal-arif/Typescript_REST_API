@@ -1,3 +1,16 @@
+/************IMPORTS ENVIRONMENT DOTENV MODULE*/
+import * as dotenv from 'dotenv';
+//Loads .env file contents into process.env.
+const result = dotenv.config();
+
+// Sanity Check for ENV data
+if (result.error) {
+  console.log(`Error loading environment variables, aborting.`);
+  process.exit(1);
+}
+
+console.log(process.env.PORT);
+
 /************IMPORTS */
 /**Express Module from /node_modules */
 import * as express from 'express';
