@@ -64,13 +64,13 @@
 
 19. DotEnv Package: To support Multiple Environments for App.
     1. Install Package: npm install dotenv --save
+20. Winston Logging Framework: 1. Install Package: npm install --save winston
+    **\*** SERVER Setup **\***
 
-**\*** SERVER Setup **\***
-
-1. Server Logic: server.js
-2. Routes HTTP Logic: route.ts
-3. Compile: npm run build if this does not work then try tsc or tsc -w
-4. Start Server: node dist/server.js
+21. Server Logic: server.js
+22. Routes HTTP Logic: route.ts
+23. Compile: npm run build if this does not work then try tsc or tsc -w
+24. Start Server: node dist/server.js
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 

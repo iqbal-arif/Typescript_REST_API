@@ -40,7 +40,16 @@ function startServer() {
 
   let port: number;
 
+  /*******Importing the PORT from ".evn" file*******/
+  const portEnv = process.env.PORT;
+
+  /*******Importing the PORT from "package.json script via process.argv" file*******/
   const portArg = process.argv[2]; //index [2] because it contains PORT NUMBER.
+
+  /****isInteger Check */
+  if (isInteger(portEnv)) {
+    port = parseInt(portEnv);
+  }
 
   // Converting String to Number
   /*****Important NOTE ON parseInt*****/
@@ -49,7 +58,7 @@ function startServer() {
     1. parsInt("asdfjkl"): result is NaN 
     1. parsInt("9001asdafjkl"): result is 9001 (It takes the number part only*/
 
-  if (isInteger(portArg)) {
+  if (!port && isInteger(portArg)) {
     port = parseInt(portArg);
   }
 
