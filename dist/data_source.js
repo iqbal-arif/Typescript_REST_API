@@ -10,7 +10,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     port: parseInt(process.env.DB_PORT),
     database: process.env.DB_NAME,
     //For Development Environment
-    ssl: false,
+    // ssl: false,
     // extra: {
     //   ssl: {
     //     rejectUnauthorized: true,
