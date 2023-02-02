@@ -13,6 +13,7 @@ console.log(process.env.PORT);
 /************IMPORTS */
 /**Express Module from /node_modules */
 var express = require("express");
+var data_source_1 = require("./data_source");
 var logger_1 = require("./logger"); // should load after environment load to work properly
 var route_1 = require("./routes/route");
 var utils_1 = require("./utils");
@@ -60,6 +61,15 @@ function startServer() {
         logger_1.logger.info("HTTP REST API Server is now running at http://localhost:".concat(port));
     });
 }
-/********* INVOKING THE FUNCTIONS *******/
-setupExpress();
-startServer();
+/********** DATABASE INITIALIZATION*******/
+data_source_1.AppDataSource.initialize()
+    .then(function () {
+    /********* INVOKING THE FUNCTIONS  After Database is Successfully initialized*******/
+    logger_1.logger.info("The database has been initialized successfully.");
+    setupExpress();
+    startServer();
+})
+    .catch(function (err) {
+    logger_1.logger.error("Error during datasource initialization.", err);
+    process.exit(1);
+});
