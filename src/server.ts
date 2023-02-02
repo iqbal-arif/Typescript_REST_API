@@ -14,6 +14,7 @@ console.log(process.env.PORT);
 /************IMPORTS */
 /**Express Module from /node_modules */
 import * as express from 'express';
+import { AppDataSource } from './data_source';
 import { logger } from './logger'; // should load after environment load to work properly
 import { root } from './routes/route';
 import { isInteger } from './utils';
@@ -74,6 +75,15 @@ function startServer() {
   });
 }
 
-/********* INVOKING THE FUNCTIONS *******/
-setupExpress();
-startServer();
+/********** DATABASE INITIALIZATION*******/
+AppDataSource.initialize()
+  .then(() => {
+    /********* INVOKING THE FUNCTIONS  After Database is Successfully initialized*******/
+    logger.info(`The database has been initialized successfully.`);
+    setupExpress();
+    startServer();
+  })
+  .catch((err) => {
+    logger.error(`Error during datasource initialization.`, err);
+    process.exit(1);
+  });
