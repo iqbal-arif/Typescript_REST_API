@@ -69,3 +69,55 @@
     "severity": "FATAL",
     "stack": "error: database \"PostgreSQL 15\" does not exist\n    at Parser.parseErrorMessage (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:287:98)\n    at Parser.handlePacket (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:126:29)\n    at Parser.parse (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:39:38)\n    at Socket.<anonymous> (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\index.js:11:42)\n    at Socket.emit (node:events:513:28)\n    at addChunk (node:internal/streams/readable:324:12)\n    at readableAddChunk (node:internal/streams/readable:297:9)\n    at Readable.push (node:internal/streams/readable:234:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)"
 }
+{
+    "code": "3D000",
+    "file": "postinit.c",
+    "length": 99,
+    "level": "error",
+    "line": "943",
+    "message": "Error during datasource initialization. database \"PostgresSQL 15\" does not exist",
+    "name": "error",
+    "routine": "InitPostgres",
+    "severity": "FATAL",
+    "stack": "error: database \"PostgresSQL 15\" does not exist\n    at Parser.parseErrorMessage (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:287:98)\n    at Parser.handlePacket (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:126:29)\n    at Parser.parse (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\parser.js:39:38)\n    at Socket.<anonymous> (C:\\GITHUB\\Typescript_REST_API\\node_modules\\pg-protocol\\dist\\index.js:11:42)\n    at Socket.emit (node:events:513:28)\n    at addChunk (node:internal/streams/readable:324:12)\n    at readableAddChunk (node:internal/streams/readable:297:9)\n    at Readable.push (node:internal/streams/readable:234:10)\n    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
