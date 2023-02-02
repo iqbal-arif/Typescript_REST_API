@@ -72,9 +72,11 @@
 22. Routes HTTP Logic: route.ts
 23. Compile: npm run build if this does not work then try tsc or tsc -w
 24. Start Server: node dist/server.js
-25. DataBase Connection: TypeORM
+25. DataBase Connection Installation: TypeORM
     1. npm install typeorm --save
     2. Database Driver: npm install pg --save
+26. DataBase Connection AppDataSource TypeORM module
+27. Database Initialize in server.ts
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
