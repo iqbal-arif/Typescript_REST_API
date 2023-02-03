@@ -11,12 +11,14 @@ if (result.error) {
 }
 console.log(process.env.PORT);
 /************IMPORTS */
+// For TypeORM library
+require("reflect-metadata"); //for decorator internal usage for data model classes
 /**Express Module from /node_modules */
 var express = require("express");
-var data_source_1 = require("./data_source");
-var logger_1 = require("./logger"); // should load after environment load to work properly
 var route_1 = require("./routes/route");
 var utils_1 = require("./utils");
+var logger_1 = require("./logger"); // should load after environment load to work properly
+var data_source_1 = require("./data_source");
 /***Initialize Express */
 var app = express();
 /********* FUNCTION SETUP EXPRESS

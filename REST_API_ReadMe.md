@@ -81,6 +81,11 @@
 29. Data Model
 30. Meta Data Node Library: For Decorators to work properly
     1. Install: npm install --save reflect-metadata
+31. DataBase Connection by SQL Shell
+    1. Data Base listing: \dt;
+    2. DataBase table COURSES data entry: select \* from "COURSES";
+    3. DataBase Column for Table COURSES: \dS "COURSES";
+    4. DataBase Column for Table LESSONS: \dS "LESSONS";
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 

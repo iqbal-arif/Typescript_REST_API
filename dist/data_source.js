@@ -19,6 +19,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     //   },
     // },
     entities: [course_1.Course, lesson_1.Lesson],
+    // synchronize flag configure database and crates tables
     synchronize: true,
     logging: true,
 });
