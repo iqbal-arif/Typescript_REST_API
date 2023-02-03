@@ -79,6 +79,8 @@
 27. Database Initialize in server.ts
 28. Start Server to Connect to Database successfully and then start server
 29. Data Model
+30. Meta Data Node Library: For Decorators to work properly
+    1. Install: npm install --save reflect-metadata
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
