@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppDataSource = void 0;
 var typeorm_1 = require("typeorm");
+var lesson_1 = require("./models/lesson");
+var course_1 = require("./models/course");
 exports.AppDataSource = new typeorm_1.DataSource({
     type: 'postgres',
     host: process.env.DB_HOST,
@@ -16,6 +18,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     //     rejectUnauthorized: true,
     //   },
     // },
-    entities: [],
+    entities: [course_1.Course, lesson_1.Lesson],
+    synchronize: true,
     logging: true,
 });

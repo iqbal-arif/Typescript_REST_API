@@ -9,60 +9,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Course = void 0;
+exports.Lesson = void 0;
 var typeorm_1 = require("typeorm");
-var lesson_1 = require("./lesson");
-//ENTITY Decorator from TypeORM will instruct class Course
-var Course = /** @class */ (function () {
-    // Plain Typescript Class Model for Class
-    function Course() {
+var course_1 = require("./course");
+var typeorm_2 = require("typeorm");
+var Lesson = /** @class */ (function () {
+    function Lesson() {
     }
     __decorate([
         (0, typeorm_1.PrimaryGeneratedColumn)(),
         __metadata("design:type", Number)
-    ], Course.prototype, "id", void 0);
+    ], Lesson.prototype, "id", void 0);
+    __decorate([
+        (0, typeorm_1.Column)(),
+        __metadata("design:type", String)
+    ], Lesson.prototype, "title", void 0);
+    __decorate([
+        (0, typeorm_1.Column)(),
+        __metadata("design:type", String)
+    ], Lesson.prototype, "duration", void 0);
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", Number)
-    ], Course.prototype, "seqNo", void 0);
+    ], Lesson.prototype, "seqNo", void 0);
     __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
-    ], Course.prototype, "url", void 0);
-    __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
-    ], Course.prototype, "title", void 0);
-    __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
-    ], Course.prototype, "iconUrl", void 0);
-    __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
-    ], Course.prototype, "longDescription", void 0);
-    __decorate([
-        (0, typeorm_1.Column)(),
-        __metadata("design:type", String)
-    ], Course.prototype, "category", void 0);
-    __decorate([
-        (0, typeorm_1.OneToMany)(function () { return lesson_1.Lesson; }, function (lesson) { return lesson.course; }),
-        __metadata("design:type", Array)
-    ], Course.prototype, "lessons", void 0);
+        (0, typeorm_1.ManyToOne)(function () { return course_1.Course; }, function (course) { return course.lessons; }),
+        (0, typeorm_2.JoinColumn)({
+            name: 'courseId',
+        }),
+        __metadata("design:type", course_1.Course)
+    ], Lesson.prototype, "course", void 0);
     __decorate([
         (0, typeorm_1.CreateDateColumn)(),
         __metadata("design:type", Date)
-    ], Course.prototype, "createdAt", void 0);
+    ], Lesson.prototype, "createdAt", void 0);
     __decorate([
         (0, typeorm_1.UpdateDateColumn)(),
         __metadata("design:type", Date)
-    ], Course.prototype, "lastUpdatedAt", void 0);
-    Course = __decorate([
+    ], Lesson.prototype, "lastUpdatedAt", void 0);
+    Lesson = __decorate([
         (0, typeorm_1.Entity)({
-            name: 'COURSES',
+            name: 'LESSONS',
         })
-        // Plain Typescript Class Model for Class
-    ], Course);
-    return Course;
+    ], Lesson);
+    return Lesson;
 }());
-exports.Course = Course;
+exports.Lesson = Lesson;

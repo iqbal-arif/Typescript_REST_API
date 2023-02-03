@@ -12,6 +12,7 @@ if (result.error) {
 console.log(process.env.PORT);
 
 /************IMPORTS */
+import 'reflect-metadata'; //for decorator internal usage for data model classes
 /**Express Module from /node_modules */
 import * as express from 'express';
 import { AppDataSource } from './data_source';
