@@ -86,6 +86,7 @@
     2. DataBase table COURSES data entry: select \* from "COURSES";
     3. DataBase Column for Table COURSES: \dS "COURSES";
     4. DataBase Column for Table LESSONS: \dS "LESSONS";
+32.
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
