@@ -3,21 +3,23 @@ import * as dotenv from 'dotenv';
 //Loads .env file contents into process.env.
 const result = dotenv.config();
 
-import 'reflect-metadata';
+// For TypeORM library needed for
+import 'reflect-metadata'; //for decorator internal usage for data model classes
 
-import { COURSES, USERS } from './db-data';
-import { AppDataSource } from '../data-source';
+import { COURSES, USERS } from './db_data';
+import { AppDataSource } from '../data_source';
+/*
 import { Course } from './course';
 import { DeepPartial } from 'typeorm';
 import { Lesson } from './lesson';
 import { User } from './user';
 import { calculatePasswordHash } from '../utils';
-
+*/
 async function populateDb() {
   await AppDataSource.initialize();
 
   console.log(`Database connection ready.`);
-
+  /*
   const courses = Object.values(COURSES) as DeepPartial<Course>[];
 
   const courseRepository = AppDataSource.getRepository(Course);
@@ -71,6 +73,7 @@ async function populateDb() {
   console.log(
     ` Data Inserted - courses ${totalCourses}, lessons ${totalLessons}`
   );
+  */
 }
 
 populateDb()

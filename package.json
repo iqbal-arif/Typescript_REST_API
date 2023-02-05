@@ -9,7 +9,7 @@
     "start-dev-server": "tsc-watch --onSuccess \"node dist/server.js 9002\"",
     "dev": "npm-run-all clean build start-dev-server",
     "populate-db": "npm-run-all clean build run-populate-db-script",
-    "run-populate-db-script": "node dist/models/populate-db.js"
+    "run-populate-db-script": "node dist/models/populate_db.js"
   },
   "author": "Arif Iqbal",
   "license": "MIT",
