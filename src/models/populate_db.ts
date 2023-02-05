@@ -19,16 +19,18 @@ async function populateDb() {
   await AppDataSource.initialize();
 
   console.log(`Database connection ready.`);
-  /*
+
   const courses = Object.values(COURSES) as DeepPartial<Course>[];
+  /*
 
   const courseRepository = AppDataSource.getRepository(Course);
 
   const lessonsRepository = AppDataSource.getRepository(Lesson);
+*/
 
   for (let courseData of courses) {
     console.log(`Inserting course ${courseData.title}`);
-
+/*
     const course = courseRepository.create(courseData);
 
     await courseRepository.save(course);
