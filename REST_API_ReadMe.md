@@ -94,3 +94,11 @@
     delete package.lock.json file by running rm -f package-lock.json
     clean up the NPM cache by running npm cache clean --force
     install all packages again by running npm install
+
+/\***\*\*\*\*\*** TypeORM Testing with Local Database **\*\***\***\*\***
+
+1. Local Data: db_data.ts
+2. Database Connection Logic: populate_db.ts
+3. Script for Database in Package.json
+   1. "populate-db": "npm-run-all clean build run-populate-db-script",
+   2. "run-populate-db-script": "node dist/models/populate-db.js",
