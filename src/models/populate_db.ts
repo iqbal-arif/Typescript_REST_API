@@ -38,9 +38,6 @@ async function populateDb() {
     console.log(`Inserting course ${courseData.title}`);
     const course = courseRepository.create(courseData);
     await courseRepository.save(course);
-  }
-  /*
-
 
     for (let lessonData of courseData.lessons) {
       console.log(`Inserting lesson ${lessonData.title}`);
@@ -52,6 +49,7 @@ async function populateDb() {
       await lessonsRepository.save(lesson);
     }
   }
+  /*
 
   const users = Object.values(USERS) as any[];
 
@@ -75,6 +73,7 @@ async function populateDb() {
     await AppDataSource.manager.save(user);
   }
 
+  */
   const totalCourses = await courseRepository.createQueryBuilder().getCount();
 
   const totalLessons = await lessonsRepository.createQueryBuilder().getCount();
@@ -82,7 +81,6 @@ async function populateDb() {
   console.log(
     ` Data Inserted - courses ${totalCourses}, lessons ${totalLessons}`
   );
-  */
 }
 
 populateDb()
