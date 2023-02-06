@@ -8,8 +8,9 @@ import 'reflect-metadata'; //for decorator internal usage for data model classes
 
 import { COURSES, USERS } from './db_data';
 import { AppDataSource } from '../data_source';
-/*
 import { Course } from './course';
+import { DeepPartial } from 'typeorm';
+/*
 import { DeepPartial } from 'typeorm';
 import { Lesson } from './lesson';
 import { User } from './user';
@@ -19,7 +20,8 @@ async function populateDb() {
   await AppDataSource.initialize();
 
   console.log(`Database connection ready.`);
-
+  //grabbing object values which is not an array
+  //DeepPartial: Same as Partial but goes deeper and makes Partial all its properties and sub-properties.
   const courses = Object.values(COURSES) as DeepPartial<Course>[];
   /*
 
@@ -30,7 +32,8 @@ async function populateDb() {
 
   for (let courseData of courses) {
     console.log(`Inserting course ${courseData.title}`);
-/*
+  }
+  /*
     const course = courseRepository.create(courseData);
 
     await courseRepository.save(course);
