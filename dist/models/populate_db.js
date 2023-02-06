@@ -42,22 +42,61 @@ var dotenv = require("dotenv");
 var result = dotenv.config();
 // For TypeORM library needed for
 require("reflect-metadata"); //for decorator internal usage for data model classes
+var db_data_1 = require("./db_data");
 var data_source_1 = require("../data_source");
+var course_1 = require("./course");
+var lesson_1 = require("./lesson");
 /*
-import { Course } from './course';
-import { DeepPartial } from 'typeorm';
-import { Lesson } from './lesson';
 import { User } from './user';
 import { calculatePasswordHash } from '../utils';
 */
 function populateDb() {
     return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var courses, courseRepository, lessonsRepository, _i, courses_1, courseData, course, _a, _b, lessonData, lesson, totalCourses, totalLessons;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
                 case 0: return [4 /*yield*/, data_source_1.AppDataSource.initialize()];
                 case 1:
-                    _a.sent();
+                    _c.sent();
                     console.log("Database connection ready.");
+                    courses = Object.values(db_data_1.COURSES);
+                    courseRepository = data_source_1.AppDataSource.getRepository(course_1.Course);
+                    lessonsRepository = data_source_1.AppDataSource.getRepository(lesson_1.Lesson);
+                    _i = 0, courses_1 = courses;
+                    _c.label = 2;
+                case 2:
+                    if (!(_i < courses_1.length)) return [3 /*break*/, 8];
+                    courseData = courses_1[_i];
+                    console.log("Inserting course ".concat(courseData.title));
+                    course = courseRepository.create(courseData);
+                    return [4 /*yield*/, courseRepository.save(course)];
+                case 3:
+                    _c.sent();
+                    _a = 0, _b = courseData.lessons;
+                    _c.label = 4;
+                case 4:
+                    if (!(_a < _b.length)) return [3 /*break*/, 7];
+                    lessonData = _b[_a];
+                    console.log("Inserting lesson ".concat(lessonData.title));
+                    lesson = lessonsRepository.create(lessonData);
+                    lesson.course = course;
+                    return [4 /*yield*/, lessonsRepository.save(lesson)];
+                case 5:
+                    _c.sent();
+                    _c.label = 6;
+                case 6:
+                    _a++;
+                    return [3 /*break*/, 4];
+                case 7:
+                    _i++;
+                    return [3 /*break*/, 2];
+                case 8: return [4 /*yield*/, courseRepository.createQueryBuilder().getCount()];
+                case 9:
+                    totalCourses = _c.sent();
+                    return [4 /*yield*/, lessonsRepository.createQueryBuilder().getCount()];
+                case 10:
+                    totalLessons = _c.sent();
+                    console.log(" Data Inserted - courses ".concat(totalCourses, ", lessons ").concat(totalLessons));
                     return [2 /*return*/];
             }
         });
