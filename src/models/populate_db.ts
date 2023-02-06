@@ -9,10 +9,10 @@ import 'reflect-metadata'; //for decorator internal usage for data model classes
 import { COURSES, USERS } from './db_data';
 import { AppDataSource } from '../data_source';
 import { Course } from './course';
-import { DeepPartial } from 'typeorm';
-/*
+//DeepPartial: Same as Partial but goes deeper and makes Partial all its properties and sub-properties.
 import { DeepPartial } from 'typeorm';
 import { Lesson } from './lesson';
+/*
 import { User } from './user';
 import { calculatePasswordHash } from '../utils';
 */
@@ -21,22 +21,26 @@ async function populateDb() {
 
   console.log(`Database connection ready.`);
   //grabbing object values which is not an array
-  //DeepPartial: Same as Partial but goes deeper and makes Partial all its properties and sub-properties.
-  const courses = Object.values(COURSES) as DeepPartial<Course>[];
-  /*
 
+  const courses = Object.values(COURSES) as DeepPartial<Course>[];
+  // Course Repository are used to interact with database using the data mapper pattern
+  //   Such as perform operations like,
+  // courseRepository.create();
+  // courseRepository.clear();
+  // courseRepository.insert();
+  // courseRepository.delete();
+  // courseRepository.save();
   const courseRepository = AppDataSource.getRepository(Course);
 
   const lessonsRepository = AppDataSource.getRepository(Lesson);
-*/
 
   for (let courseData of courses) {
     console.log(`Inserting course ${courseData.title}`);
+    const course = courseRepository.create(courseData);
+    await courseRepository.save(course);
   }
   /*
-    const course = courseRepository.create(courseData);
 
-    await courseRepository.save(course);
 
     for (let lessonData of courseData.lessons) {
       console.log(`Inserting lesson ${lessonData.title}`);
