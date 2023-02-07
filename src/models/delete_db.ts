@@ -21,7 +21,7 @@ async function deleteDb() {
 
   await AppDataSource.getRepository(Course).delete({});
 
-  console.log(`Clearing USERS table.`);
+  //   console.log(`Clearing USERS table.`);
 
   //   await AppDataSource.getRepository(User).delete({});
 }

@@ -104,3 +104,7 @@
    2. "run-populate-db-script": "node dist/models/populate-db.js",
 
 /\***\*\*\*\*\*** Script to clean Database **\*\***\***\*\***
+
+1. Script for Database in Package.json
+   1. "delete-db": "npm-run-all clean build run-delete-db-script",
+   2. "run-delete-db-script": "node dist/models/delete_db.js"

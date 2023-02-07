@@ -16,7 +16,7 @@ console.log(process.env.PORT);
 import 'reflect-metadata'; //for decorator internal usage for data model classes
 /**Express Module from /node_modules */
 import * as express from 'express';
-import { root } from './routes/route';
+import { root } from './routes/root';
 import { isInteger } from './utils';
 import { logger } from './logger'; // should load after environment load to work properly
 import { AppDataSource } from './data_source';
