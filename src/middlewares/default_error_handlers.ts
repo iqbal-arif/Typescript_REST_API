@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { logger } from '../logger';
 
 export function defaultErrorHandler(
-  err,
+  err, //this err object only fills in when error occurs
   request: Request,
   response: Response,
   next: NextFunction
@@ -15,7 +15,7 @@ export function defaultErrorHandler(
     );
     return next(err);
   }
-
+  //Default sever error
   response.status(500).json({
     status: 'error',
     message: 'Default error handling triggered, check logs.',

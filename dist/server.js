@@ -20,6 +20,7 @@ var utils_1 = require("./utils");
 var logger_1 = require("./logger"); // should load after environment load to work properly
 var data_source_1 = require("./data_source");
 var get_all_courses_1 = require("./routes/get_all_courses");
+var default_error_handlers_1 = require("./middlewares/default_error_handlers");
 /***Initialize Express */
 var app = express();
 /********* FUNCTION SETUP EXPRESS
@@ -33,6 +34,8 @@ function setupExpress() {
     app.route('/').get(root_1.root);
     // Route To Get Courses
     app.route('/api/courses').get(get_all_courses_1.getAllCourses);
+    // Location of this handler is important
+    app.use(default_error_handlers_1.defaultErrorHandler);
 }
 /********* FUNCTION START SERVER
  Logic to Start Server

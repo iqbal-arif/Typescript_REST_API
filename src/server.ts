@@ -21,6 +21,7 @@ import { isInteger } from './utils';
 import { logger } from './logger'; // should load after environment load to work properly
 import { AppDataSource } from './data_source';
 import { getAllCourses } from './routes/get_all_courses';
+import { defaultErrorHandler } from './middlewares/default_error_handlers';
 
 /***Initialize Express */
 const app = express();
@@ -36,6 +37,8 @@ function setupExpress() {
   app.route('/').get(root);
   // Route To Get Courses
   app.route('/api/courses').get(getAllCourses);
+  // Location of this handler is important
+  app.use(defaultErrorHandler);
 }
 
 /********* FUNCTION START SERVER
