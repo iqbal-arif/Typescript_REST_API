@@ -15,10 +15,11 @@ console.log(process.env.PORT);
 require("reflect-metadata"); //for decorator internal usage for data model classes
 /**Express Module from /node_modules */
 var express = require("express");
-var route_1 = require("./routes/route");
+var root_1 = require("./routes/root");
 var utils_1 = require("./utils");
 var logger_1 = require("./logger"); // should load after environment load to work properly
 var data_source_1 = require("./data_source");
+var get_all_courses_1 = require("./routes/get_all_courses");
 /***Initialize Express */
 var app = express();
 /********* FUNCTION SETUP EXPRESS
@@ -29,7 +30,9 @@ function setupExpress() {
     /****Route is a mapping between URL accessing in endpoint and Request Handler processes the response to the request */
     /**Route Request Handler */
     // http://localhost:9000/
-    app.route('/').get(route_1.root);
+    app.route('/').get(root_1.root);
+    // Route To Get Courses
+    app.route('/api/courses').get(get_all_courses_1.getAllCourses);
 }
 /********* FUNCTION START SERVER
  Logic to Start Server

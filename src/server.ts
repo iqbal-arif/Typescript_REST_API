@@ -20,6 +20,7 @@ import { root } from './routes/root';
 import { isInteger } from './utils';
 import { logger } from './logger'; // should load after environment load to work properly
 import { AppDataSource } from './data_source';
+import { getAllCourses } from './routes/get_all_courses';
 
 /***Initialize Express */
 const app = express();
@@ -33,6 +34,8 @@ function setupExpress() {
   /**Route Request Handler */
   // http://localhost:9000/
   app.route('/').get(root);
+  // Route To Get Courses
+  app.route('/api/courses').get(getAllCourses);
 }
 
 /********* FUNCTION START SERVER
