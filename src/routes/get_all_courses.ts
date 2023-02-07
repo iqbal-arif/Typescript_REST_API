@@ -10,6 +10,9 @@ export async function getAllCourses(
 ) {
   try {
     logger.debug(`Called getAllCourses()`, request['user']);
+    // use the following code to trigger the error code
+    // Triggers teh Default error handler
+    // throw { error: 'Thrown ERROR' };
 
     const courses = await AppDataSource.getRepository(Course)
       .createQueryBuilder('courses')
