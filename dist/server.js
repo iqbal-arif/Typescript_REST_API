@@ -21,6 +21,7 @@ var logger_1 = require("./logger"); // should load after environment load to wor
 var data_source_1 = require("./data_source");
 var get_all_courses_1 = require("./routes/get_all_courses");
 var default_error_handlers_1 = require("./middlewares/default_error_handlers");
+var find_course_by_url_1 = require("./routes/find_course_by_url");
 // CORS Package
 var cors = require('cors');
 /***Initialize Express */
@@ -40,6 +41,8 @@ function setupExpress() {
     app.route('/').get(root_1.root);
     // Route To Get Courses
     app.route('/api/courses').get(get_all_courses_1.getAllCourses);
+    // Route to Get Course by URL CourseUrl
+    app.route('/api/courses/:courseUrl').get(find_course_by_url_1.findCourseByUrl);
     // Location of this handler is important
     app.use(default_error_handlers_1.defaultErrorHandler);
 }

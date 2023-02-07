@@ -22,6 +22,7 @@ import { logger } from './logger'; // should load after environment load to work
 import { AppDataSource } from './data_source';
 import { getAllCourses } from './routes/get_all_courses';
 import { defaultErrorHandler } from './middlewares/default_error_handlers';
+import { findCourseByUrl } from './routes/find_course_by_url';
 
 // CORS Package
 const cors = require('cors');
@@ -45,6 +46,8 @@ function setupExpress() {
   app.route('/').get(root);
   // Route To Get Courses
   app.route('/api/courses').get(getAllCourses);
+  // Route to Get Course by URL CourseUrl
+  app.route('/api/courses/:courseUrl').get(findCourseByUrl);
   // Location of this handler is important
   app.use(defaultErrorHandler);
 }
