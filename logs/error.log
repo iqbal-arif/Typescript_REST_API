@@ -66,3 +66,7 @@
     "level": "error",
     "message": "Could not find a course with url typescript-bootcamp"
 }
+{
+    "level": "error",
+    "message": "Could not find a course with url typescript-bootcam"
+}
