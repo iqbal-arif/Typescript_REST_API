@@ -422,3 +422,27 @@
     "level": "info",
     "message": "HTTP REST API Server is now running at http://localhost:9001"
 }
+{
+    "level": "debug",
+    "message": "Called findCourseByUrl()"
+}
+{
+    "level": "error",
+    "message": "Could not find a course with url typescript-bootcamp"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called findCourseByUrl()"
+}
+{
+    "level": "error",
+    "message": "Could not find a course with url typescript-bootcamp"
+}
