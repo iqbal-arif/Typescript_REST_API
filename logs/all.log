@@ -474,3 +474,11 @@
     "level": "debug",
     "message": "Called findCourseByUrl()"
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
