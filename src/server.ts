@@ -23,6 +23,9 @@ import { AppDataSource } from './data_source';
 import { getAllCourses } from './routes/get_all_courses';
 import { defaultErrorHandler } from './middlewares/default_error_handlers';
 
+// CORS Package
+const cors = require('cors');
+
 /***Initialize Express */
 const app = express();
 
@@ -30,6 +33,11 @@ const app = express();
 Express Routes and Express Middleware
 */
 function setupExpress() {
+  // CROSS Origin Request
+  // This middleware will Add right Cross Origin Header to the REQ, then
+  // Delegates the execution of the REQ to next middleware or end point in middleware
+  app.use(cors({ origin: true }));
+
   /****Express EndPoint aka Routes */
   /****Route is a mapping between URL accessing in endpoint and Request Handler processes the response to the request */
   /**Route Request Handler */
