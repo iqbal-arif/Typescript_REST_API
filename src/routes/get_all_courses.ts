@@ -13,7 +13,8 @@ export async function getAllCourses(
 
     const courses = await AppDataSource.getRepository(Course)
       .createQueryBuilder('courses')
-      .leftJoinAndSelect('courses.lessons', 'LESSONS')
+      //   For listing of lesson
+      //   .leftJoinAndSelect('courses.lessons', 'LESSONS')
       .orderBy('courses.seqNo')
       .getMany();
 

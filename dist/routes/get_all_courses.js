@@ -50,7 +50,8 @@ function getAllCourses(request, response, next) {
                     logger_1.logger.debug("Called getAllCourses()", request['user']);
                     return [4 /*yield*/, data_source_1.AppDataSource.getRepository(course_1.Course)
                             .createQueryBuilder('courses')
-                            .leftJoinAndSelect('courses.lessons', 'LESSONS')
+                            //   For listing of lesson
+                            //   .leftJoinAndSelect('courses.lessons', 'LESSONS')
                             .orderBy('courses.seqNo')
                             .getMany()];
                 case 1:
