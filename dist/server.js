@@ -21,12 +21,18 @@ var logger_1 = require("./logger"); // should load after environment load to wor
 var data_source_1 = require("./data_source");
 var get_all_courses_1 = require("./routes/get_all_courses");
 var default_error_handlers_1 = require("./middlewares/default_error_handlers");
+// CORS Package
+var cors = require('cors');
 /***Initialize Express */
 var app = express();
 /********* FUNCTION SETUP EXPRESS
 Express Routes and Express Middleware
 */
 function setupExpress() {
+    // CROSS Origin Request
+    // This middleware will Add right Cross Origin Header to the REQ, then
+    // Delegates the execution of the REQ to next middleware or end point in middleware
+    app.use(cors({ origin: true }));
     /****Express EndPoint aka Routes */
     /****Route is a mapping between URL accessing in endpoint and Request Handler processes the response to the request */
     /**Route Request Handler */
