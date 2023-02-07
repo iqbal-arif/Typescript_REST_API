@@ -86,7 +86,8 @@
     2. DataBase table COURSES data entry: select \* from "COURSES";
     3. DataBase Column for Table COURSES: \dS "COURSES";
     4. DataBase Column for Table LESSONS: \dS "LESSONS";
-32.
+32. CORS Installation
+    1. Install: npm install --save cors
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
@@ -108,3 +109,7 @@
 1. Script for Database in Package.json
    1. "delete-db": "npm-run-all clean build run-delete-db-script",
    2. "run-delete-db-script": "node dist/models/delete_db.js"
+
+/\***\*\*\*\*\*** CORS Capabilities To an Express Server **\*\***\***\*\***
+
+1. Install: npm install --save cors
