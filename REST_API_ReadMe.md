@@ -102,3 +102,5 @@
 3. Script for Database in Package.json
    1. "populate-db": "npm-run-all clean build run-populate-db-script",
    2. "run-populate-db-script": "node dist/models/populate-db.js",
+
+/\***\*\*\*\*\*** Script to clean Database **\*\***\***\*\***
