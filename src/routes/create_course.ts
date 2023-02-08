@@ -24,12 +24,12 @@ export async function createCourse(
     if (!data) {
       throw `No data available, cannot save course.`;
     }
-
+    //Manager is an EntityManager used to create transaction
     const course = await AppDataSource.manager.transaction(
       'REPEATABLE READ',
       async (transactionalEntityManager) => {
         const repository = transactionalEntityManager.getRepository(Course);
-
+        // Getting Maximum sequence number for all the courses saved in database
         const result = await repository
           .createQueryBuilder('courses')
           .select('MAX(courses.seqNo)', 'max')
@@ -37,7 +37,7 @@ export async function createCourse(
 
         const course = repository.create({
           ...data,
-          seqNo: (result?.max ?? 0) + 1,
+          seqNo: (result?.max ?? 0) + 1, //Optional Chaining if max value is not available. Default value is 0
         });
 
         await repository.save(course);
