@@ -44,6 +44,9 @@ function setupExpress() {
   // Delegates the execution of the REQ to next middleware or end point in middleware
   app.use(cors({ origin: true }));
 
+  //Body Parser for JSON content
+  app.use(bodyParser.json());
+
   /****Express EndPoint aka Routes */
   /****Route is a mapping between URL accessing in endpoint and Request Handler processes the response to the request */
   /**Route Request Handler */

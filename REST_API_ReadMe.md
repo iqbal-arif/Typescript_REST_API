@@ -90,6 +90,11 @@
     1. Install: npm install --save cors
 33. Body Parser : a middleware fills body property with content of the body
     1. Install: npm install --save body-parser
+34. POST , PATCH, PUT, DELETE UTILITY
+    1. Chrome Extensions: Boomerang-SOAP & REST Client, etc
+    2. POST App
+    3. CURL Command for Windows / Mac Utility for POST, PUT, DELETE REQUESTS
+       1. curl -X PATCH http://localhost:9001/api/courses/20 -H "Content-Type:application/json" -d '{"title":"Typescript Bootcamp v2"}'
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 

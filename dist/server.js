@@ -26,6 +26,8 @@ var find_lessons_for_course_1 = require("./routes/find_lessons_for_course");
 var update_course_1 = require("./routes/update_course");
 // CORS Package
 var cors = require('cors');
+// Body Parser
+var bodyParser = require('body-parser');
 /***Initialize Express */
 var app = express();
 /********* FUNCTION SETUP EXPRESS
@@ -36,6 +38,8 @@ function setupExpress() {
     // This middleware will Add right Cross Origin Header to the REQ, then
     // Delegates the execution of the REQ to next middleware or end point in middleware
     app.use(cors({ origin: true }));
+    //Body Parser for JSON content
+    app.use(bodyParser.json());
     /****Express EndPoint aka Routes */
     /****Route is a mapping between URL accessing in endpoint and Request Handler processes the response to the request */
     /**Route Request Handler */
