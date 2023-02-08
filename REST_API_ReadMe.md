@@ -97,6 +97,9 @@
        1. curl -X PATCH http://localhost:9001/api/courses/20 -H "Content-Type:application/json" -d '{"title":"Typescript Bootcamp v2"}'
 35. POST: Creating a Course in a database
     1. curl -X POST http://localhost:9000/api/courses -H "Content-Type:application/json" -d '{"url": "firebase-bootcamp", "title": "Firebase Bootcamp", "iconUrl": "https://angular-university.s3-us-west-1.amazonaws.com/course-images/firebase-course-1.jpg","longDescription": "Complete guided tour to the Firebase ecosystem.", "category": "BEGINNER"}'
+36. DELETE: Delete a Course from database
+    1. curl -X DELETE http://localhost:9001/api/courses/45
+    2. PostgresSQL SHELL CMD: postgres=# select \* from "LESSONS" where "courseId" = 45;
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
