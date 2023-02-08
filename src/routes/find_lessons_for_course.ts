@@ -13,9 +13,9 @@ export async function findLessonsForCourse(
     logger.debug(`Called findLessonsForCourse()`);
 
     const courseId = request.params.courseId,
-      query = request.query as any,
-      pageNumber = query?.pageNumber ?? '0',
-      pageSize = query?.pageSize ?? '3';
+      query = request.query as any, //type any , so any parameter can be deduced
+      pageNumber = query?.pageNumber ?? '0', // default page number is 0
+      pageSize = query?.pageSize ?? '3'; // default page size is 3
 
     if (!isInteger(courseId)) {
       throw `Invalid course id ${courseId}`;
@@ -28,10 +28,10 @@ export async function findLessonsForCourse(
     if (!isInteger(pageSize)) {
       throw `Invalid pageSize ${pageSize}`;
     }
-
+    // Find a Page of Lessons for a given Course
     const lessons = await AppDataSource.getRepository(Lesson)
       .createQueryBuilder('lessons')
-      .where('lessons.courseId = :courseId', { courseId })
+      .where('lessons.courseId = :courseId', { courseId }) //joining the lessons table with the courses table
       .orderBy('lessons.seqNo')
       .skip(pageNumber * pageSize)
       .take(pageSize)

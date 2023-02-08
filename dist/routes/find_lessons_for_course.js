@@ -62,7 +62,7 @@ function findLessonsForCourse(request, response, next) {
                     }
                     return [4 /*yield*/, data_source_1.AppDataSource.getRepository(lesson_1.Lesson)
                             .createQueryBuilder('lessons')
-                            .where('lessons.courseId = :courseId', { courseId: courseId })
+                            .where('lessons.courseId = :courseId', { courseId: courseId }) //joining the lessons table with the courses table
                             .orderBy('lessons.seqNo')
                             .skip(pageNumber * pageSize)
                             .take(pageSize)
