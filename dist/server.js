@@ -25,6 +25,7 @@ var find_course_by_url_1 = require("./routes/find_course_by_url");
 var find_lessons_for_course_1 = require("./routes/find_lessons_for_course");
 var update_course_1 = require("./routes/update_course");
 var create_course_1 = require("./routes/create_course");
+var delete_course_1 = require("./routes/delete_course");
 // CORS Package
 var cors = require('cors');
 // Body Parser
@@ -56,6 +57,8 @@ function setupExpress() {
     app.route('/api/courses/:courseId').patch(update_course_1.updateCourse);
     // Route to Create New Course
     app.route('/api/courses').post(create_course_1.createCourse);
+    // Route to Delete Course & Lesson
+    app.route('/api/courses/:courseId').delete(delete_course_1.deleteCourseAndLessons);
     // Location of this handler is important
     app.use(default_error_handlers_1.defaultErrorHandler);
 }
