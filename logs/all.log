@@ -610,3 +610,75 @@
     "level": "info",
     "message": "HTTP REST API Server is now running at http://localhost:9001"
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called createCourse()"
+}
+{
+    "level": "debug",
+    "message": "Called getAllCourses()"
+}
+{
+    "level": "debug",
+    "message": "Called getAllCourses()"
+}

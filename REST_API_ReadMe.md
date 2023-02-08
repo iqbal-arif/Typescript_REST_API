@@ -95,6 +95,8 @@
     2. POST App
     3. CURL Command for Windows / Mac Utility for POST, PUT, DELETE REQUESTS
        1. curl -X PATCH http://localhost:9001/api/courses/20 -H "Content-Type:application/json" -d '{"title":"Typescript Bootcamp v2"}'
+35. POST: Creating a Course in a database
+    1. curl -X POST http://localhost:9000/api/courses -H "Content-Type:application/json" -d '{"url": "firebase-bootcamp", "title": "Firebase Bootcamp", "iconUrl": "https://angular-university.s3-us-west-1.amazonaws.com/course-images/firebase-course-1.jpg","longDescription": "Complete guided tour to the Firebase ecosystem.", "category": "BEGINNER"}'
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
