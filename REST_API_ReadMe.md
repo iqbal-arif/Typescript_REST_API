@@ -88,6 +88,8 @@
     4. DataBase Column for Table LESSONS: \dS "LESSONS";
 32. CORS Installation
     1. Install: npm install --save cors
+33. Body Parser : a middleware fills body property with content of the body
+    1. Install: npm install --save body-parser
 
 /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 

@@ -29,6 +29,9 @@ import { updateCourse } from './routes/update_course';
 // CORS Package
 const cors = require('cors');
 
+// Body Parser
+const bodyParser = require('body-parser');
+
 /***Initialize Express */
 const app = express();
 
