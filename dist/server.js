@@ -22,6 +22,7 @@ var data_source_1 = require("./data_source");
 var get_all_courses_1 = require("./routes/get_all_courses");
 var default_error_handlers_1 = require("./middlewares/default_error_handlers");
 var find_course_by_url_1 = require("./routes/find_course_by_url");
+var find_lessons_for_course_1 = require("./routes/find_lessons_for_course");
 // CORS Package
 var cors = require('cors');
 /***Initialize Express */
@@ -43,6 +44,8 @@ function setupExpress() {
     app.route('/api/courses').get(get_all_courses_1.getAllCourses);
     // Route to Get Course by URL CourseUrl
     app.route('/api/courses/:courseUrl').get(find_course_by_url_1.findCourseByUrl);
+    // Route to Get Lessons of a given Course
+    app.route('/api/courses/:courseId/lessons').get(find_lessons_for_course_1.findLessonsForCourse);
     // Location of this handler is important
     app.use(default_error_handlers_1.defaultErrorHandler);
 }
