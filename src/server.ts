@@ -24,6 +24,7 @@ import { getAllCourses } from './routes/get_all_courses';
 import { defaultErrorHandler } from './middlewares/default_error_handlers';
 import { findCourseByUrl } from './routes/find_course_by_url';
 import { findLessonsForCourse } from './routes/find_lessons_for_course';
+import { updateCourse } from './routes/update_course';
 
 // CORS Package
 const cors = require('cors');
@@ -51,6 +52,9 @@ function setupExpress() {
   app.route('/api/courses/:courseUrl').get(findCourseByUrl);
   // Route to Get Lessons of a given Course
   app.route('/api/courses/:courseId/lessons').get(findLessonsForCourse);
+  // Route to Update a Course PUT is a new version ; Patch means partial updates
+  app.route('/api/courses/:courseId').patch(updateCourse);
+
   // Location of this handler is important
   app.use(defaultErrorHandler);
 }

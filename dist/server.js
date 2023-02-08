@@ -23,6 +23,7 @@ var get_all_courses_1 = require("./routes/get_all_courses");
 var default_error_handlers_1 = require("./middlewares/default_error_handlers");
 var find_course_by_url_1 = require("./routes/find_course_by_url");
 var find_lessons_for_course_1 = require("./routes/find_lessons_for_course");
+var update_course_1 = require("./routes/update_course");
 // CORS Package
 var cors = require('cors');
 /***Initialize Express */
@@ -46,6 +47,8 @@ function setupExpress() {
     app.route('/api/courses/:courseUrl').get(find_course_by_url_1.findCourseByUrl);
     // Route to Get Lessons of a given Course
     app.route('/api/courses/:courseId/lessons').get(find_lessons_for_course_1.findLessonsForCourse);
+    // Route to Update a Course PUT is a new version ; Patch means partial updates
+    app.route('/api/courses/:courseId').patch(update_course_1.updateCourse);
     // Location of this handler is important
     app.use(default_error_handlers_1.defaultErrorHandler);
 }
