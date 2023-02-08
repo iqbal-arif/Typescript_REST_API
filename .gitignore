@@ -1,4 +1,4 @@
 node_modules
 # .env
-# Typescript_REST_API/logs
-logs
+typescript_rest_api/logs
+# logs
