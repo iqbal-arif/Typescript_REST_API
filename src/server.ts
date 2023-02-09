@@ -27,6 +27,7 @@ import { findLessonsForCourse } from './routes/find_lessons_for_course';
 import { updateCourse } from './routes/update_course';
 import { createCourse } from './routes/create_course';
 import { deleteCourseAndLessons } from './routes/delete_course';
+import { createUser } from './routes/create_users';
 
 // CORS Package
 const cors = require('cors');
@@ -66,6 +67,8 @@ function setupExpress() {
   app.route('/api/courses').post(createCourse);
   // Route to Delete Course & Lesson
   app.route('/api/courses/:courseId').delete(deleteCourseAndLessons);
+  // Route to Create User
+  app.route('/api/users').post(createUser);
   // Location of this handler is important
   app.use(defaultErrorHandler);
 }
