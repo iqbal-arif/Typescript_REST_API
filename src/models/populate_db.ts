@@ -12,10 +12,10 @@ import { Course } from './course';
 //DeepPartial: Same as Partial but goes deeper and makes Partial all its properties and sub-properties.
 import { DeepPartial } from 'typeorm';
 import { Lesson } from './lesson';
-/*
-import { User } from './user';
-import { calculatePasswordHash } from '../utils';
-*/
+
+import { User } from './users';
+// import { calculatePasswordHash } from '../utils';
+
 async function populateDb() {
   await AppDataSource.initialize();
 
@@ -49,7 +49,6 @@ async function populateDb() {
       await lessonsRepository.save(lesson);
     }
   }
-  /*
 
   const users = Object.values(USERS) as any[];
 
@@ -64,16 +63,15 @@ async function populateDb() {
       pictureUrl,
       isAdmin,
       passwordSalt,
-      passwordHash: await calculatePasswordHash(
+      /*  passwordHash: await calculatePasswordHash(
         plainTextPassword,
         passwordSalt
-      ),
+      ),*/
     });
 
     await AppDataSource.manager.save(user);
   }
 
-  */
   const totalCourses = await courseRepository.createQueryBuilder().getCount();
 
   const totalLessons = await lessonsRepository.createQueryBuilder().getCount();
