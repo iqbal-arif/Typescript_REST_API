@@ -1,33 +1,33 @@
 **\*** Project Setup **\***
 
-1. Initialize Project: npm init
-2. Script in JSON: Delete script in package.json
-3. Install Typescript: npm install --save-dev typescript
-4. File Exclusion: .gitignore => enter the list
-   .idea
-   \*.js
-   node_modules
-   dist
-   .env
-   rest-api/logs
-5. Git Setup
-   1. Initialize Git: git init
-   2. Remote Access to git Repository: git remote add origin https://github.com/iqbal-arif/Node-REST-API--TypeORM-Express.git
-   3. Commit changes.
-6. Typescript Configuration:
-   {
-   "compilerOptions": {
-   "target": "ES5",
-   "outDir": "dist"
-   }
-   }
-7. Package JSON configuration:
-   "scripts": {
-   "build": "tsc",
-   "start-server": "node dist/server.js"
-   },
-8. File compilation: tsc
-9. App Launch for script: npm run build
+1.  Initialize Project: npm init
+2.  Script in JSON: Delete script in package.json
+3.  Install Typescript: npm install --save-dev typescript
+4.  File Exclusion: .gitignore => enter the list
+    .idea
+    \*.js
+    node_modules
+    dist
+    .env
+    rest-api/logs
+5.  Git Setup
+    1. Initialize Git: git init
+    2. Remote Access to git Repository: git remote add origin https://github.com/iqbal-arif/Node-REST-API--TypeORM-Express.git
+    3. Commit changes.
+6.  Typescript Configuration:
+    {
+    "compilerOptions": {
+    "target": "ES5",
+    "outDir": "dist"
+    }
+    }
+7.  Package JSON configuration:
+    "scripts": {
+    "build": "tsc",
+    "start-server": "node dist/server.js"
+    },
+8.  File compilation: tsc
+9.  App Launch for script: npm run build
 10. To run the .ts file and get result: npm run start-server
 11. Typescript Continuous UPdate: tsc -w
 12. Install Express normal dependency: npm install --save express
@@ -100,13 +100,13 @@
 36. DELETE: Delete a Course from database
     1. curl -X DELETE http://localhost:9001/api/courses/45
     2. PostgresSQL SHELL CMD: postgres=# select \* from "LESSONS" where "courseId" = 45;
+37. Create USER: 1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}' 2. PostgresSQL SHELL CMD: postgres=# select \* from "USERS";
+    /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
-/\***\*\*\*\*\*** npm notes **\*\***\***\*\***
-
-    delete the node modules folder by running rm -rf node_modules
-    delete package.lock.json file by running rm -f package-lock.json
-    clean up the NPM cache by running npm cache clean --force
-    install all packages again by running npm install
+        delete the node modules folder by running rm -rf node_modules
+        delete package.lock.json file by running rm -f package-lock.json
+        clean up the NPM cache by running npm cache clean --force
+        install all packages again by running npm install
 
 /\***\*\*\*\*\*** TypeORM Testing with Local Database **\*\***\***\*\***
 
