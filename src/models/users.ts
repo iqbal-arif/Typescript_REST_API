@@ -20,7 +20,8 @@ export class User {
   passwordHash: string;
 
   @Column()
-  passwordSalt: string;
+  passwordSalt: string; //passwordSalt is a random number used as input to calculate password hash and derive it from plaintext password.
+  /********IMPORTANT NOTE****This is industry standard and safe database from attackers with two passwords are same.*/
 
   @Column()
   pictureUrl: string;
