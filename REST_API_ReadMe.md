@@ -125,3 +125,7 @@
 /\***\*\*\*\*\*** CORS Capabilities To an Express Server **\*\***\***\*\***
 
 1. Install: npm install --save cors
+
+/\***\*\*\*\*\* Node Crypto Module (crypto.pbkdf2) For HashPassword **\*\***\***\*\*
+
+1.

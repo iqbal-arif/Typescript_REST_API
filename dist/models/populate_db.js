@@ -46,24 +46,22 @@ var db_data_1 = require("./db_data");
 var data_source_1 = require("../data_source");
 var course_1 = require("./course");
 var lesson_1 = require("./lesson");
-/*
-import { User } from './user';
-import { calculatePasswordHash } from '../utils';
-*/
+var users_1 = require("./users");
+// import { calculatePasswordHash } from '../utils';
 function populateDb() {
     return __awaiter(this, void 0, void 0, function () {
-        var courses, courseRepository, lessonsRepository, _i, courses_1, courseData, course, _a, _b, lessonData, lesson, totalCourses, totalLessons;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        var courses, courseRepository, lessonsRepository, _i, courses_1, courseData, course, _a, _b, lessonData, lesson, users, _c, users_2, userData, email, pictureUrl, isAdmin, passwordSalt, plainTextPassword, user, totalCourses, totalLessons;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
                 case 0: return [4 /*yield*/, data_source_1.AppDataSource.initialize()];
                 case 1:
-                    _c.sent();
+                    _d.sent();
                     console.log("Database connection ready.");
                     courses = Object.values(db_data_1.COURSES);
                     courseRepository = data_source_1.AppDataSource.getRepository(course_1.Course);
                     lessonsRepository = data_source_1.AppDataSource.getRepository(lesson_1.Lesson);
                     _i = 0, courses_1 = courses;
-                    _c.label = 2;
+                    _d.label = 2;
                 case 2:
                     if (!(_i < courses_1.length)) return [3 /*break*/, 8];
                     courseData = courses_1[_i];
@@ -71,9 +69,9 @@ function populateDb() {
                     course = courseRepository.create(courseData);
                     return [4 /*yield*/, courseRepository.save(course)];
                 case 3:
-                    _c.sent();
+                    _d.sent();
                     _a = 0, _b = courseData.lessons;
-                    _c.label = 4;
+                    _d.label = 4;
                 case 4:
                     if (!(_a < _b.length)) return [3 /*break*/, 7];
                     lessonData = _b[_a];
@@ -82,20 +80,46 @@ function populateDb() {
                     lesson.course = course;
                     return [4 /*yield*/, lessonsRepository.save(lesson)];
                 case 5:
-                    _c.sent();
-                    _c.label = 6;
+                    _d.sent();
+                    _d.label = 6;
                 case 6:
                     _a++;
                     return [3 /*break*/, 4];
                 case 7:
                     _i++;
                     return [3 /*break*/, 2];
-                case 8: return [4 /*yield*/, courseRepository.createQueryBuilder().getCount()];
+                case 8:
+                    users = Object.values(db_data_1.USERS);
+                    _c = 0, users_2 = users;
+                    _d.label = 9;
                 case 9:
-                    totalCourses = _c.sent();
-                    return [4 /*yield*/, lessonsRepository.createQueryBuilder().getCount()];
+                    if (!(_c < users_2.length)) return [3 /*break*/, 12];
+                    userData = users_2[_c];
+                    console.log("Inserting user: ".concat(userData));
+                    email = userData.email, pictureUrl = userData.pictureUrl, isAdmin = userData.isAdmin, passwordSalt = userData.passwordSalt, plainTextPassword = userData.plainTextPassword;
+                    user = data_source_1.AppDataSource.getRepository(users_1.User).create({
+                        email: email,
+                        pictureUrl: pictureUrl,
+                        isAdmin: isAdmin,
+                        passwordSalt: passwordSalt,
+                        /*  passwordHash: await calculatePasswordHash(
+                          plainTextPassword,
+                          passwordSalt
+                        ),*/
+                    });
+                    return [4 /*yield*/, data_source_1.AppDataSource.manager.save(user)];
                 case 10:
-                    totalLessons = _c.sent();
+                    _d.sent();
+                    _d.label = 11;
+                case 11:
+                    _c++;
+                    return [3 /*break*/, 9];
+                case 12: return [4 /*yield*/, courseRepository.createQueryBuilder().getCount()];
+                case 13:
+                    totalCourses = _d.sent();
+                    return [4 /*yield*/, lessonsRepository.createQueryBuilder().getCount()];
+                case 14:
+                    totalLessons = _d.sent();
                     console.log(" Data Inserted - courses ".concat(totalCourses, ", lessons ").concat(totalLessons));
                     return [2 /*return*/];
             }
