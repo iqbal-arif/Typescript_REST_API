@@ -1,3 +1,10 @@
+// ***** Node Crypto Module at Runtime
+const crypto = require('crypto');
+/****UTILITY Function to Convert callback based API Functions to Promise based API*/
+const util = require('util');
+/***HashPassword converted to promised based through Node Util by passing crypto param */
+const hashPassword = util.promisify(crypto.pbkdf2);
+
 export function isInteger(input: string) {
   /* ^ Start delimiter
        $ End delimiter
@@ -7,4 +14,18 @@ export function isInteger(input: string) {
        */
 
   return input?.match(/^\d+$/) ?? false;
+}
+export async function calculatePasswordHash(
+  plainTextPassword: string,
+  passwordSalt: string
+) {
+  const passwordHash = await hashPassword(
+    plainTextPassword,
+    passwordSalt,
+    1000,
+    64,
+    'sha512'
+  );
+
+  return passwordHash.toString('hex');
 }
