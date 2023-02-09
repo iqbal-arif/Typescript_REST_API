@@ -41,7 +41,7 @@ export async function createUser(
       response.status(500).json({ message });
       return;
     }
-
+    // Generating passwordSalt through crypto
     const passwordSalt = crypto.randomBytes(64).toString('hex');
 
     const passwordHash = await calculatePasswordHash(password, passwordSalt);
