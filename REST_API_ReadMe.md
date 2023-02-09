@@ -128,4 +128,10 @@
 
 /\***\*\*\*\*\* Node Crypto Module (crypto.pbkdf2) For HashPassword **\*\***\***\*\*
 
-1.
+1. Crypto in Action:
+   1. in Terminal: type: node
+   2. set crypto variable: type: const crypto = require('crypto');
+   3. Run crypto.pbkdf2(): crypto.pbkdf2("plain password", "passwordSalt", number of hash iterations,hash password length, "hash algorithm", callback fnc (error,hash)=>console.log(hash.toString('hex'))). Hash value is going to be a buffer object, so convert it to string use "hex" to make it decimal string.
+      Actual function is written as follows:
+      crypto.pbkdf2("test", 'o61TA7yaJIsa', 1000, 64, "sha512",(err, hash) => console.log(hash.toString('hex')))
+      Result Hash value: 8444e1207312309e8a0687bee0015633a1d51135ef75175d48786629e44e697be93a29ba70898f2c74107c3e827e6936346d3b0006a1354125a65ca755a691d6
