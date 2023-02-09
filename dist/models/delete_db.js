@@ -42,7 +42,7 @@ require("reflect-metadata");
 var data_source_1 = require("../data_source");
 var lesson_1 = require("./lesson");
 var course_1 = require("./course");
-// import { User } from './user';
+var users_1 = require("./users");
 function deleteDb() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -58,6 +58,10 @@ function deleteDb() {
                     console.log("Clearing COURSES table.");
                     return [4 /*yield*/, data_source_1.AppDataSource.getRepository(course_1.Course).delete({})];
                 case 3:
+                    _a.sent();
+                    console.log("Clearing USERS table.");
+                    return [4 /*yield*/, data_source_1.AppDataSource.getRepository(users_1.User).delete({})];
+                case 4:
                     _a.sent();
                     return [2 /*return*/];
             }
