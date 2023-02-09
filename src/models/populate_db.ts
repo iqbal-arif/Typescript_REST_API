@@ -14,7 +14,7 @@ import { DeepPartial } from 'typeorm';
 import { Lesson } from './lesson';
 
 import { User } from './users';
-// import { calculatePasswordHash } from '../utils';
+import { calculatePasswordHash } from '../utils';
 
 async function populateDb() {
   await AppDataSource.initialize();
@@ -63,10 +63,10 @@ async function populateDb() {
       pictureUrl,
       isAdmin,
       passwordSalt,
-      /*  passwordHash: await calculatePasswordHash(
+      passwordHash: await calculatePasswordHash(
         plainTextPassword,
         passwordSalt
-      ),*/
+      ),
     });
 
     await AppDataSource.manager.save(user);
