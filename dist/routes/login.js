@@ -42,7 +42,7 @@ var data_source_1 = require("../data_source");
 var users_1 = require("../models/users");
 var utils_1 = require("../utils");
 var JWT_SECRET = process.env.JWT_SECRET;
-var jwt = require('jsonwebtoken');
+var jwt = require('jsonwebtoken'); //jsonwebtoken library to create token string
 /**
  *
  * curl -X POST http://localhost:9000/api/login -H "Content-Type:application/json" -d '{"email": "test@angular-university.io", "password":"test"}'

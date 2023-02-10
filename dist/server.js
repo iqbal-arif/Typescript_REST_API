@@ -28,6 +28,7 @@ var create_course_1 = require("./routes/create_course");
 var delete_course_1 = require("./routes/delete_course");
 var create_users_1 = require("./routes/create_users");
 var login_1 = require("./routes/login");
+var authentication_middleware_1 = require("./middlewares/authentication_middleware");
 // CORS Package
 var cors = require('cors');
 // Body Parser
@@ -50,19 +51,25 @@ function setupExpress() {
     // http://localhost:9000/
     app.route('/').get(root_1.root);
     // Route To Get Courses
-    app.route('/api/courses').get(get_all_courses_1.getAllCourses);
+    app.route('/api/courses').get(authentication_middleware_1.checkIfAuthenticated, get_all_courses_1.getAllCourses);
     // Route to Get Course by URL CourseUrl
-    app.route('/api/courses/:courseUrl').get(find_course_by_url_1.findCourseByUrl);
+    app
+        .route('/api/courses/:courseUrl')
+        .get(authentication_middleware_1.checkIfAuthenticated, find_course_by_url_1.findCourseByUrl);
     // Route to Get Lessons of a given Course
-    app.route('/api/courses/:courseId/lessons').get(find_lessons_for_course_1.findLessonsForCourse);
+    app
+        .route('/api/courses/:courseId/lessons')
+        .get(authentication_middleware_1.checkIfAuthenticated, find_lessons_for_course_1.findLessonsForCourse);
     // Route to Update a Course PUT is a new version ; Patch means partial updates
-    app.route('/api/courses/:courseId').patch(update_course_1.updateCourse);
+    app.route('/api/courses/:courseId').patch(authentication_middleware_1.checkIfAuthenticated, update_course_1.updateCourse);
     // Route to Create New Course
-    app.route('/api/courses').post(create_course_1.createCourse);
+    app.route('/api/courses').post(authentication_middleware_1.checkIfAuthenticated, create_course_1.createCourse);
     // Route to Delete Course & Lesson
-    app.route('/api/courses/:courseId').delete(delete_course_1.deleteCourseAndLessons);
+    app
+        .route('/api/courses/:courseId')
+        .delete(authentication_middleware_1.checkIfAuthenticated, delete_course_1.deleteCourseAndLessons);
     // Route to Create User
-    app.route('/api/users').post(create_users_1.createUser);
+    app.route('/api/users').post(authentication_middleware_1.checkIfAuthenticated, create_users_1.createUser);
     // Route to Authentication
     app.route('/api/login').post(login_1.login);
     // Location of this handler is important

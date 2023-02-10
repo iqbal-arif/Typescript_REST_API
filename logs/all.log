@@ -866,3 +866,35 @@
     "level": "info",
     "message": "HTTP REST API Server is now running at http://localhost:9001"
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "info",
+    "message": "User test@angular-university.io has now logged in."
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}

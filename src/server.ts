@@ -29,6 +29,7 @@ import { createCourse } from './routes/create_course';
 import { deleteCourseAndLessons } from './routes/delete_course';
 import { createUser } from './routes/create_users';
 import { login } from './routes/login';
+import { checkIfAuthenticated } from './middlewares/authentication_middleware';
 
 // CORS Package
 const cors = require('cors');
@@ -57,19 +58,25 @@ function setupExpress() {
   // http://localhost:9000/
   app.route('/').get(root);
   // Route To Get Courses
-  app.route('/api/courses').get(getAllCourses);
+  app.route('/api/courses').get(checkIfAuthenticated, getAllCourses);
   // Route to Get Course by URL CourseUrl
-  app.route('/api/courses/:courseUrl').get(findCourseByUrl);
+  app
+    .route('/api/courses/:courseUrl')
+    .get(checkIfAuthenticated, findCourseByUrl);
   // Route to Get Lessons of a given Course
-  app.route('/api/courses/:courseId/lessons').get(findLessonsForCourse);
+  app
+    .route('/api/courses/:courseId/lessons')
+    .get(checkIfAuthenticated, findLessonsForCourse);
   // Route to Update a Course PUT is a new version ; Patch means partial updates
-  app.route('/api/courses/:courseId').patch(updateCourse);
+  app.route('/api/courses/:courseId').patch(checkIfAuthenticated, updateCourse);
   // Route to Create New Course
-  app.route('/api/courses').post(createCourse);
+  app.route('/api/courses').post(checkIfAuthenticated, createCourse);
   // Route to Delete Course & Lesson
-  app.route('/api/courses/:courseId').delete(deleteCourseAndLessons);
+  app
+    .route('/api/courses/:courseId')
+    .delete(checkIfAuthenticated, deleteCourseAndLessons);
   // Route to Create User
-  app.route('/api/users').post(createUser);
+  app.route('/api/users').post(checkIfAuthenticated, createUser);
   // Route to Authentication
   app.route('/api/login').post(login);
 
