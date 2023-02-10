@@ -135,3 +135,7 @@
       Actual function is written as follows:
       crypto.pbkdf2("test", 'o61TA7yaJIsa', 1000, 64, "sha512",(err, hash) => console.log(hash.toString('hex')))
       Result Hash value: 8444e1207312309e8a0687bee0015633a1d51135ef75175d48786629e44e697be93a29ba70898f2c74107c3e827e6936346d3b0006a1354125a65ca755a691d6
+
+/\***\*\*\*\*\*** JWT Authentication **\*\***\***\*\***
+
+1. https://jwt.io/
