@@ -157,3 +157,5 @@
       crypto.randomBytes(32).toString("hex")
       Below is the code
       '60a6f1a3f61cd076142efca1ca8e52af98bd0438e00eb233bed82c1d3513703e'
+   3. Save it to .env file:
+      JWT_SECRET=Random 32 bits code goes here

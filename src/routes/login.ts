@@ -4,7 +4,7 @@ import { AppDataSource } from '../data_source';
 import { User } from '../models/users';
 import { calculatePasswordHash } from '../utils';
 const JWT_SECRET = process.env.JWT_SECRET;
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); //jsonwebtoken library to create token string
 
 /**
  *
@@ -59,13 +59,14 @@ export async function login(
     logger.info(`User ${email} has now logged in.`);
 
     const { pictureUrl, isAdmin } = user;
-
+    // Payload of the JSON WEB TOKEN Storing in authJwt variable
+    // JSON Web Token has three parts: Header.Payload.Verify Signature
     const authJwt = {
       userId: user.id,
       email,
       isAdmin,
     };
-
+    // using JSONWEBTOKEN sign(payload, jwt secret from .env)
     const authJwtToken = await jwt.sign(authJwt, JWT_SECRET);
 
     response.status(200).json({
@@ -74,7 +75,7 @@ export async function login(
         pictureUrl,
         isAdmin,
       },
-      authJwtToken,
+      authJwtToken, //authentication jsonwebtoken string
     });
   } catch (error) {
     logger.error(`Error calling login()`);
