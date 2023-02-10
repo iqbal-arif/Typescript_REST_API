@@ -27,6 +27,7 @@ var update_course_1 = require("./routes/update_course");
 var create_course_1 = require("./routes/create_course");
 var delete_course_1 = require("./routes/delete_course");
 var create_users_1 = require("./routes/create_users");
+var login_1 = require("./routes/login");
 // CORS Package
 var cors = require('cors');
 // Body Parser
@@ -62,6 +63,8 @@ function setupExpress() {
     app.route('/api/courses/:courseId').delete(delete_course_1.deleteCourseAndLessons);
     // Route to Create User
     app.route('/api/users').post(create_users_1.createUser);
+    // Route to Authentication
+    app.route('/api/login').post(login_1.login);
     // Location of this handler is important
     app.use(default_error_handlers_1.defaultErrorHandler);
 }
