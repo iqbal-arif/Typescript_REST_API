@@ -101,12 +101,19 @@
     1. curl -X DELETE http://localhost:9001/api/courses/45
     2. PostgresSQL SHELL CMD: postgres=# select \* from "LESSONS" where "courseId" = 45;
 37. Create USER: 1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}' 2. PostgresSQL SHELL CMD: postgres=# select \* from "USERS";
-    /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
 
-        delete the node modules folder by running rm -rf node_modules
-        delete package.lock.json file by running rm -f package-lock.json
-        clean up the NPM cache by running npm cache clean --force
-        install all packages again by running npm install
+38. Node JSON WEB TOKEN:
+
+    1.  Git Hub Repository: https://github.com/auth0/node-jsonwebtoken
+    2.  HS256 is the Algorithm use to generate the signature of the JSON web token.
+    3.  RS256 Algorithm uses dual key private and public key
+    4.  Install: npm install --save jsonwebtoken
+        /\***\*\*\*\*\*** npm notes **\*\***\***\*\***
+
+            delete the node modules folder by running rm -rf node_modules
+            delete package.lock.json file by running rm -f package-lock.json
+            clean up the NPM cache by running npm cache clean --force
+            install all packages again by running npm install
 
 /\***\*\*\*\*\*** TypeORM Testing with Local Database **\*\***\***\*\***
 
@@ -141,3 +148,12 @@
 1. https://jwt.io/
 2. it is encoded in base 64 URL , so it can be used in browser as a url parameter without special encoding.
    https://jwt.io/?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+3. User login with id & password
+4. Server after validating id & password creates JSON jwt token with user payload and add adds if this user is administrator or not.
+5. Install: npm install --save jsonwebtoken
+6. Generating JSON Token in Node through crypto:
+   1. const crypto = require('crypto');
+   2. Generate 32 randomBytes convert into Hex decimal format
+      crypto.randomBytes(32).toString("hex")
+      Below is the code
+      '60a6f1a3f61cd076142efca1ca8e52af98bd0438e00eb233bed82c1d3513703e'
