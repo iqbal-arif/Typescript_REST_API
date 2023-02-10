@@ -139,3 +139,5 @@
 /\***\*\*\*\*\*** JWT Authentication **\*\***\***\*\***
 
 1. https://jwt.io/
+2. it is encoded in base 64 URL , so it can be used in browser as a url parameter without special encoding.
+   https://jwt.io/?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
