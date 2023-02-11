@@ -38,9 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkIfAuthenticated = void 0;
 var logger_1 = require("../logger");
-var JWT_SECRET = process.env.JWT_SECRET;
-var jwt = require('jsonwebtoken');
+var JWT_SECRET = process.env.JWT_SECRET; //JSON Secret code
+var jwt = require('jsonwebtoken'); // JSON Library
 function checkIfAuthenticated(request, response, next) {
+    // Retrieving authJwtToken (authorization header) from header. It Includes requester ID and Email in the payload
     var authJwtToken = request.headers.authorization;
     if (!authJwtToken) {
         logger_1.logger.info("The authentication JWT is not present, access denied.");
@@ -59,6 +60,7 @@ function checkIfAuthenticated(request, response, next) {
     });
 }
 exports.checkIfAuthenticated = checkIfAuthenticated;
+//   Decode JSONWEBTOKEN To Validate the Signature
 function checkJwtValidity(authJwtToken) {
     return __awaiter(this, void 0, void 0, function () {
         var user;
