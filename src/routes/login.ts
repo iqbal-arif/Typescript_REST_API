@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken'); //jsonwebtoken library to create token stri
 
 /**
  *
- * curl -X POST http://localhost:9000/api/login -H "Content-Type:application/json" -d '{"email": "test@angular-university.io", "password":"test"}'
+ * curl -X POST http://localhost:9001/api/login -H "Content-Type:application/json" -d '{"email": "test@angular-university.io", "password":"test"}'
  *
  */
 
