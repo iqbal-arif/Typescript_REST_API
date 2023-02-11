@@ -52,7 +52,7 @@ function checkIfAuthenticated(request, response, next) {
         .then(function (user) {
         logger_1.logger.info("Authentication JWT successfully decoded:", user);
         request['user'] = user; // Assigning user property info to "user" object to be used in other endpoints
-        next();
+        next(); // This next allows to provoke getAllCourses, updateCourses, other functions etc.
     })
         .catch(function (err) {
         logger_1.logger.error("Could not validate the authentication JWT, access denied.", err);

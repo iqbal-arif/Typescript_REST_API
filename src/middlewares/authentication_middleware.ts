@@ -22,7 +22,7 @@ export function checkIfAuthenticated(
       logger.info(`Authentication JWT successfully decoded:`, user);
       request['user'] = user; // Assigning user property info to "user" object to be used in other endpoints
 
-      next();
+      next(); // This next allows to provoke getAllCourses, updateCourses, other functions etc.
     })
     .catch((err) => {
       logger.error(
