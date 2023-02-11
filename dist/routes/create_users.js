@@ -44,7 +44,7 @@ var utils_1 = require("../utils");
 var crypto = require('crypto');
 /**
  *
- * curl -X POST http://localhost:9000/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}'
+ * curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}'
  *
  */
 function createUser(request, response, next) {
