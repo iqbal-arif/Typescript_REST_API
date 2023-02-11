@@ -183,3 +183,8 @@
 3. Trying to Create New User with Non Admin UserID:
    1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}'
    2. Forbidden
+4. Adding JSONWEBTOKEN for non Admin User
+   1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}' -H "Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBhbmd1bGFyLXVuaXZlcnNpdHkuaW8iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjc2MDg4NDUwfQ.hQJlJ4Y3-9jVPb0mWkfkpo4sUIUV32i60Yyo2UmPnVs"
+   2. Forbidden
+      info: Authentication JWT successfully decoded: {"email":"test@angular-university.io","iat":1676088450,"isAdmin":false,"userId":1}
+      error: The user is not an admin, access denied
