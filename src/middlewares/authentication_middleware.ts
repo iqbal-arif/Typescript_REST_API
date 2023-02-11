@@ -1,13 +1,14 @@
 import { NextFunction, Request, Response } from 'express';
 import { logger } from '../logger';
-const JWT_SECRET = process.env.JWT_SECRET;
-const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET; //JSON Secret code
+const jwt = require('jsonwebtoken'); // JSON Library
 
 export function checkIfAuthenticated(
   request: Request,
   response: Response,
   next: NextFunction
 ) {
+  // Retrieving authJwtToken (authorization header) from header. It Includes requester ID and Email in the payload
   const authJwtToken = request.headers.authorization;
 
   if (!authJwtToken) {
@@ -31,6 +32,7 @@ export function checkIfAuthenticated(
       response.sendStatus(403);
     });
 }
+//   Decode JSONWEBTOKEN To Validate the Signature
 
 async function checkJwtValidity(authJwtToken: string) {
   const user = await jwt.verify(authJwtToken, JWT_SECRET);
