@@ -51,7 +51,7 @@ function checkIfAuthenticated(request, response, next) {
     checkJwtValidity(authJwtToken)
         .then(function (user) {
         logger_1.logger.info("Authentication JWT successfully decoded:", user);
-        request['user'] = user;
+        request['user'] = user; // Assigning user property info to "user" object to be used in other endpoints
         next();
     })
         .catch(function (err) {
@@ -60,7 +60,8 @@ function checkIfAuthenticated(request, response, next) {
     });
 }
 exports.checkIfAuthenticated = checkIfAuthenticated;
-//   Decode JSONWEBTOKEN To Validate the Signature
+// Decode JSONWEBTOKEN To Validate the Signature
+// JWT verify() takes jsonwebtoken with jwt secret and pull extract and return user
 function checkJwtValidity(authJwtToken) {
     return __awaiter(this, void 0, void 0, function () {
         var user;
