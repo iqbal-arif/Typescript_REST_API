@@ -1162,3 +1162,43 @@
     "level": "info",
     "message": "The authentication JWT is not present, access denied."
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "info",
+    "message": "User test@angular-university.io has now logged in."
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676088450,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676088450,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676088450,
+    "isAdmin": false,
+    "level": "debug",
+    "message": "Called getAllCourses()",
+    "userId": 1
+}
