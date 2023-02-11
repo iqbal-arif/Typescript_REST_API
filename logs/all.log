@@ -946,3 +946,159 @@
     "level": "info",
     "message": "HTTP REST API Server is now running at http://localhost:9001"
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called getAllCourses()"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The authentication JWT is not present, access denied."
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "info",
+    "message": "User test@angular-university.io has now logged in."
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "error",
+    "message": "Error calling login()"
+}
+{
+    "level": "error",
+    "message": "Default error handler triggered; reason: "
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "info",
+    "message": "User test@angular-university.io has now logged in."
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676087008,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676087008,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 1
+}
+{
+    "level": "debug",
+    "message": "Called createCourse()"
+}
+{
+    "level": "error",
+    "message": "Error calling createCourse()"
+}
+{
+    "code": "23502",
+    "column": "url",
+    "detail": "Failing row contains (62, 16, null, null, null, null, null, 2023-02-10 21:45:10.267184, 2023-02-10 21:45:10.267184).",
+    "driverError": {
+        "code": "23502",
+        "column": "url",
+        "detail": "Failing row contains (62, 16, null, null, null, null, null, 2023-02-10 21:45:10.267184, 2023-02-10 21:45:10.267184).",
+        "file": "execmain.c",
+        "length": 280,
+        "line": "1974",
+        "name": "error",
+        "routine": "ExecConstraints",
+        "schema": "public",
+        "severity": "ERROR",
+        "table": "COURSES"
+    },
+    "file": "execmain.c",
+    "length": 280,
+    "level": "error",
+    "line": "1974",
+    "message": "Default error handler triggered; reason:  null value in column \"url\" of relation \"COURSES\" violates not-null constraint",
+    "parameters": [
+        16
+    ],
+    "query": "INSERT INTO \"COURSES\"(\"seqNo\", \"url\", \"title\", \"iconUrl\", \"longDescription\", \"category\", \"createdAt\", \"lastUpdatedAt\") VALUES ($1, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT) RETURNING \"id\", \"createdAt\", \"lastUpdatedAt\"",
+    "routine": "ExecConstraints",
+    "schema": "public",
+    "severity": "ERROR",
+    "stack": "QueryFailedError: null value in column \"url\" of relation \"COURSES\" violates not-null constraint\n    at PostgresQueryRunner.query (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\driver\\postgres\\PostgresQueryRunner.js:211:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async InsertQueryBuilder.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\query-builder\\InsertQueryBuilder.js:106:33)\n    at async SubjectExecutor.executeInsertOperations (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\SubjectExecutor.js:260:42)\n    at async SubjectExecutor.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\SubjectExecutor.js:92:9)\n    at async EntityPersistExecutor.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\EntityPersistExecutor.js:148:21)",
+    "table": "COURSES"
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676087008,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676087008,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676087008,
+    "isAdmin": false,
+    "level": "debug",
+    "message": "Called getAllCourses()",
+    "userId": 1
+}
