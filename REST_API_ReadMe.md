@@ -180,3 +180,6 @@
       curl http://localhost:9001/api/courses -H "Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBhbmd1bGFyLXVuaXZlcnNpdHkuaW8iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjc2MDg4NDUwfQ.hQJlJ4Y3-9jVPb0mWkfkpo4sUIUV32i60Yyo2UmPnVs"
    2. Results:
       {"courses":[{"id":61,"seqNo":0,"url":"typescript-bootcamp","title":"Typescript Bootcamp","iconUrl":"https://angular-university.s3-us-west-1.amazonaws.com/course-images/typescript-bootcamp-2.jpg","longDescription":"Learn in depth the Typescript language, build practical real-world projects","category":"BEGINNER","createdAt":"2023-02-09T02:49:52.554Z","lastUpdatedAt":"2023-02-09T02:49:52.554Z"}
+3. Trying to Create New User with Non Admin UserID:
+   1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}'
+   2. Forbidden
