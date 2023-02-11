@@ -30,6 +30,7 @@ import { deleteCourseAndLessons } from './routes/delete_course';
 import { createUser } from './routes/create_users';
 import { login } from './routes/login';
 import { checkIfAuthenticated } from './middlewares/authentication_middleware';
+import { checkIfAdmin } from './middlewares/admin_only.middleware';
 
 // CORS Package
 const cors = require('cors');
@@ -76,7 +77,7 @@ function setupExpress() {
     .route('/api/courses/:courseId')
     .delete(checkIfAuthenticated, deleteCourseAndLessons);
   // Route to Create User
-  app.route('/api/users').post(checkIfAuthenticated, createUser);
+  app.route('/api/users').post(checkIfAuthenticated, checkIfAdmin, createUser);
   // Route to Authentication
   app.route('/api/login').post(login);
 
