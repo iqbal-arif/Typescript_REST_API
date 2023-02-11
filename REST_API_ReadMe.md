@@ -171,8 +171,8 @@
 
 /\***\*\*\*\*\*** JWT Authentication & Admin Authorization **\*\***\***\*\***
 
-1. Login as a Normal User
-   1. curl -X POST http://localhost:9001/api/login -H "Content-Type:application/json" -d '{"email": "test@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test"}'
+1. Login as a NON-ADMIN User
+   1. curl -X POST http://localhost:9001/api/login -H "Content-Type:application/json" -d '{"email": "test@angular-university.io", "password": "test"}'
    2. Results:
       {"user":{"email":"test@angular-university.io","pictureUrl":"https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png","isAdmin":false},"authJwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEBhbmd1bGFyLXVuaXZlcnNpdHkuaW8iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjc2MDg4NDUwfQ.hQJlJ4Y3-9jVPb0mWkfkpo4sUIUV32i60Yyo2UmPnVs"}
 2. Getting All Courses using User JSONWEBTOKEN
@@ -188,3 +188,11 @@
    2. Forbidden
       info: Authentication JWT successfully decoded: {"email":"test@angular-university.io","iat":1676088450,"isAdmin":false,"userId":1}
       error: The user is not an admin, access denied
+5. Login as ADMIN USER
+   1. curl -X POST http://localhost:9001/api/login -H "Content-Type:application/json" -d '{"email": "admin@angular-university.io", "password": "admin"}'
+   2. Results
+      {"user":{"email":"admin@angular-university.io","pictureUrl":"https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png","isAdmin":true},"authJwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiYWRtaW5AYW5ndWxhci11bml2ZXJzaXR5LmlvIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjc2MDg5NDIyfQ.EYuXvr9yjIr62e7jMrSr6kvHRYafWdNNhnoES7kRV9c"}
+6. Creating a New User with Admin Login
+   1. curl -X POST http://localhost:9001/api/users -H "Content-Type:application/json" -d '{"email": "new-user2@angular-university.io", "pictureUrl":"https://avatars.githubusercontent.com/u/5454709", "password": "test123", "isAdmin": false}' -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoiYWRtaW5AYW5ndWxhci11bml2ZXJzaXR5LmlvIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjc2MDg5NDIyfQ.EYuXvr9yjIr62e7jMrSr6kvHRYafWdNNhnoES7kRV9c"
+   2. query: COMMIT
+      info: User new-user2@angular-university.io has been created.
