@@ -1202,3 +1202,101 @@
     "message": "Called getAllCourses()",
     "userId": 1
 }
+{
+    "level": "info",
+    "message": "The authentication JWT is not present, access denied."
+}
+{
+    "body": "{\"email\": \"new-user@angular-university.io\", \"pictureUrl\":\"https://avatars.githubusercontent.com/u/5454709\", \"p\nassword\": \"test123\", \"isAdmin\": false}",
+    "expose": true,
+    "level": "error",
+    "message": "Default error handler triggered; reason:  Unexpected token \n in JSON at position 110",
+    "stack": "SyntaxError: Unexpected token \n in JSON at position 110\n    at JSON.parse (<anonymous>)\n    at parse (C:\\GITHUB\\Typescript_REST_API\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\GITHUB\\Typescript_REST_API\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)\n    at invokeCallback (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:513:28)\n    at endReadableNT (node:internal/streams/readable:1359:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+    "status": 400,
+    "statusCode": 400,
+    "type": "entity.parse.failed"
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676088450,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 1
+}
+{
+    "email": "test@angular-university.io",
+    "iat": 1676088450,
+    "isAdmin": false,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 1
+}
+{
+    "level": "error",
+    "message": "The user is not an admin, access denied"
+}
+{
+    "level": "debug",
+    "message": "Called login()"
+}
+{
+    "level": "info",
+    "message": "User admin@angular-university.io has now logged in."
+}
+{
+    "email": "admin@angular-university.io",
+    "iat": 1676089422,
+    "isAdmin": true,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 2
+}
+{
+    "email": "admin@angular-university.io",
+    "iat": 1676089422,
+    "isAdmin": true,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 2
+}
+{
+    "level": "debug",
+    "message": "The user is a valid admin, granting access."
+}
+{
+    "level": "debug",
+    "message": "Called createUser()"
+}
+{
+    "level": "error",
+    "message": "User with email new-user@angular-university.io already exists, aborting."
+}
+{
+    "email": "admin@angular-university.io",
+    "iat": 1676089422,
+    "isAdmin": true,
+    "level": "info",
+    "message": "Found user details in JWT:",
+    "userId": 2
+}
+{
+    "email": "admin@angular-university.io",
+    "iat": 1676089422,
+    "isAdmin": true,
+    "level": "info",
+    "message": "Authentication JWT successfully decoded:",
+    "userId": 2
+}
+{
+    "level": "debug",
+    "message": "The user is a valid admin, granting access."
+}
+{
+    "level": "debug",
+    "message": "Called createUser()"
+}
+{
+    "level": "info",
+    "message": "User new-user2@angular-university.io has been created."
+}

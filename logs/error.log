@@ -114,3 +114,21 @@
     "stack": "QueryFailedError: null value in column \"url\" of relation \"COURSES\" violates not-null constraint\n    at PostgresQueryRunner.query (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\driver\\postgres\\PostgresQueryRunner.js:211:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async InsertQueryBuilder.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\query-builder\\InsertQueryBuilder.js:106:33)\n    at async SubjectExecutor.executeInsertOperations (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\SubjectExecutor.js:260:42)\n    at async SubjectExecutor.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\SubjectExecutor.js:92:9)\n    at async EntityPersistExecutor.execute (C:\\GITHUB\\Typescript_REST_API\\node_modules\\typeorm\\persistence\\EntityPersistExecutor.js:148:21)",
     "table": "COURSES"
 }
+{
+    "body": "{\"email\": \"new-user@angular-university.io\", \"pictureUrl\":\"https://avatars.githubusercontent.com/u/5454709\", \"p\nassword\": \"test123\", \"isAdmin\": false}",
+    "expose": true,
+    "level": "error",
+    "message": "Default error handler triggered; reason:  Unexpected token \n in JSON at position 110",
+    "stack": "SyntaxError: Unexpected token \n in JSON at position 110\n    at JSON.parse (<anonymous>)\n    at parse (C:\\GITHUB\\Typescript_REST_API\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\GITHUB\\Typescript_REST_API\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)\n    at invokeCallback (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\GITHUB\\Typescript_REST_API\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:513:28)\n    at endReadableNT (node:internal/streams/readable:1359:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)",
+    "status": 400,
+    "statusCode": 400,
+    "type": "entity.parse.failed"
+}
+{
+    "level": "error",
+    "message": "The user is not an admin, access denied"
+}
+{
+    "level": "error",
+    "message": "User with email new-user@angular-university.io already exists, aborting."
+}
