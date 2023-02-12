@@ -1300,3 +1300,11 @@
     "level": "info",
     "message": "User new-user2@angular-university.io has been created."
 }
+{
+    "level": "info",
+    "message": "The database has been initialized successfully."
+}
+{
+    "level": "info",
+    "message": "HTTP REST API Server is now running at http://localhost:9001"
+}
